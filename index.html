@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish Link Generator</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Create a Personalized Birthday Wish Link!</h1>
+        <p>Enter the name of the birthday person:</p>
+        <input type="text" id="nameInput" placeholder="e.g., Alice" autocomplete="off">
+        <button id="generateLinkBtn">Generate Link</button>
+
+        <div id="linkOutput" class="link-output">
+            <p>Your personalized link:</p>
+            <input type="text" id="generatedLink" readonly>
+            <div class="button-group">
+                <button id="copyLinkBtn">Copy Link</button>
+                <button id="whatsappShareBtn" class="whatsapp-btn">
+                    Share via WhatsApp
+                </button>
+            </div>
+        </div>
+
+        <p class="instructions">
+            Share this link with the birthday person for a special wish!
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

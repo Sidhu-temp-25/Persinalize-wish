@@ -1,0 +1,246 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Warm gradient */
+    margin: 0;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto; /* Add margin for smaller screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+h1 {
+    color: #e91e63; /* Pinkish-red */
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#nameInput {
+    width: calc(100% - 20px); /* Adjust width for padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e91e63;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px; /* Adjust margin for buttons */
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+button:hover {
+    background-color: #d81b60;
+    transform: translateY(-2px);
+}
+
+.link-output {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 25px;
+    display: none; /* Hidden by default */
+}
+
+.link-output p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#generatedLink {
+    width: calc(100% - 20px); /* Adjust width for padding */
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #e9e9e9;
+    font-size: 1em;
+    cursor: text;
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Add margin below input */
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+#copyLinkBtn {
+    background-color: #2196f3; /* Blue for copy button */
+    flex-grow: 1; /* Allow button to grow */
+    max-width: 200px; /* Max width for consistency */
+}
+
+#copyLinkBtn:hover {
+    background-color: #1976d2;
+}
+
+#whatsappShareBtn {
+    background-color: #25D366; /* WhatsApp green */
+    flex-grow: 1; /* Allow button to grow */
+    max-width: 200px; /* Max width for consistency */
+}
+
+#whatsappShareBtn:hover {
+    background-color: #1DA851;
+}
+
+/* Optional: Font Awesome icon styling if enabled */
+/* .whatsapp-btn i {
+    margin-right: 8px;
+} */
+
+.instructions {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Specific styles for the wish page to center content */
+.wish-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto; /* Center the container with some margin */
+    position: relative; /* For animation */
+    animation: fadeIn 1.5s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wish-container h1 {
+    color: #e91e63;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.wish-container p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.wish-container span#recipientName {
+    color: #007bff; /* A nice blue for the name */
+    font-weight: bold;
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+}
+
+.wish-container .signature {
+    margin-top: 40px;
+    font-style: italic;
+    color: #777;
+    font-size: 1.1em;
+}
+
+/* Optional: Add some festive flair (confetti) */
+.confetti {
+    position: fixed; /* Use fixed for full viewport coverage */
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b; /* Yellow */
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+    pointer-events: none; /* So it doesn't interfere with clicks */
+    z-index: 1; /* Below content */
+}
+
+.confetti:nth-child(2n) { background-color: #4CAF50; /* Green */ }
+.confetti:nth-child(3n) { background-color: #2196F3; /* Blue */ }
+.confetti:nth-child(4n) { background-color: #E91E63; /* Pink */ }
+
+/* Randomize confetti starting positions and delays */
+.confetti:nth-child(1) { left: 10%; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 20%; animation-delay: 1s; background-color: #9C27B0; }
+.confetti:nth-child(3) { left: 30%; animation-delay: 2s; }
+.confetti:nth-child(4) { left: 40%; animation-delay: 0.5s; background-color: #FF5722; }
+.confetti:nth-child(5) { left: 50%; animation-delay: 1.5s; }
+.confetti:nth-child(6) { left: 60%; animation-delay: 2.5s; background-color: #00BCD4; }
+.confetti:nth-child(7) { left: 70%; animation-delay: 1s; }
+.confetti:nth-child(8) { left: 80%; animation-delay: 2s; background-color: #8BC34A; }
+.confetti:nth-child(9) { left: 90%; animation-delay: 0.5s; }
+.confetti:nth-child(10) { left: 5%; animation-delay: 3s; background-color: #FFC107; }
+.confetti:nth-child(11) { left: 15%; animation-delay: 3.5s; }
+.confetti:nth-child(12) { left: 25%; animation-delay: 4s; background-color: #673AB7; }
+.confetti:nth-child(13) { left: 35%; animation-delay: 0.8s; }
+.confetti:nth-child(14) { left: 45%; animation-delay: 1.8s; background-color: #CDDC39; }
+.confetti:nth-child(15) { left: 55%; animation-delay: 2.8s; }
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0.7; }
+    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .container, .wish-container {
+        padding: 25px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .link-output p, .wish-container p {
+        font-size: 1.1em;
+    }
+
+    .wish-container h1 {
+        font-size: 2em;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: stretch; /* Stretch buttons to full width */
+    }
+
+    #copyLinkBtn, #whatsappShareBtn {
+        max-width: 100%; /* Remove max-width on small screens */
+    }
+}
